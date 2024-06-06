@@ -1,0 +1,29 @@
+#### GET
+GET http://localhost:5000/users
+Authorization: Bearer .eyJ1c2VySWQiOjEsIm5hbWUiOiJBbGkiLCJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaWF0IjoxNzE3Njg1OTAzLCJleHAiOjE3MTc2ODU5MjN9.rDXjSioRv7Zu_ak0nFlFGQb4K1Q4__XPeW3hCiPGPz0
+
+#### Register
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+    "name": "void",
+    "email": "void@space.org",
+    "password": "123456",
+    "confPassword": "123456"
+}
+
+#### Login
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email": "void@space.org",
+    "password": "123456"
+}
+
+#### Refresh Token
+GET http://localhost:5000/token
+
+#### Logout
+DELETE http://localhost:5000/logout
