@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 const Register = () => {
     const [name, setName] = useState('');
@@ -8,6 +8,7 @@ const Register = () => {
     const [password, setPassword] = useState('');
     const [confPassword, setConfPassword] = useState('');
     const [msg, setMsg] = useState('');
+    const [isSuccess, setIsSuccess] = useState(false); // State to track successful registration
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
@@ -25,8 +26,12 @@ const Register = () => {
             setEmail('');
             setPassword('');
             setConfPassword('');
-            // Navigate to home page or any other route
-            navigate('/');
+            // Set success message and show "Back to Login" link
+            setIsSuccess(true);
+            // Delay navigating to simulate user seeing success message
+            setTimeout(() => {
+                navigate('/');
+            }, 2000); // Navigate back to login page after 2 seconds
         } catch (error) {
             // Handle error response
             if (error.response) {
@@ -46,6 +51,11 @@ const Register = () => {
                         <div className="column is-4-desktop">
                             <form onSubmit={handleSubmit} className="box">
                                 {msg && <p className="has-text-centered has-text-danger">{msg}</p>}
+                                {isSuccess && (
+                                    <div className="notification is-success">
+                                        Registration successful! Redirecting to login page...
+                                    </div>
+                                )}
                                 <div className="field">
                                     <label className="label">Name</label>
                                     <div className="control">
@@ -98,8 +108,13 @@ const Register = () => {
                                         />
                                     </div>
                                 </div>
-                                <div className="field">
-                                    <button type="submit" className="button is-success is-fullwidth">Register</button>
+                                <div className="field is-grouped">
+                                    <div className="control">
+                                        <button type="submit" className="button is-success">Register</button>
+                                    </div>
+                                    <div className="control">
+                                        <Link to="/" className="button is-text">Back to Login</Link>
+                                    </div>
                                 </div>
                             </form>
                         </div>
