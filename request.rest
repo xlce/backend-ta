@@ -1,6 +1,6 @@
 #### GET
 GET http://localhost:5000/users
-Authorization: Bearer .eyJ1c2VySWQiOjEsIm5hbWUiOiJBbGkiLCJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaWF0IjoxNzE3Njg1OTAzLCJleHAiOjE3MTc2ODU5MjN9.rDXjSioRv7Zu_ak0nFlFGQb4K1Q4__XPeW3hCiPGPz0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsIm5hbWUiOiJ2b2lkIiwiZW1haWwiOiJ2b2lkQHNwYWNlLm9yZyIsImlhdCI6MTcxODA3MTk3MiwiZXhwIjoxNzE4MDcxOTkyfQ.9bdL5h99IiwmWQdtG9f8mW-6LKbzIozEXLOiURCdF4c
 
 #### Register
 POST http://localhost:5000/users

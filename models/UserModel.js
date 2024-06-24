@@ -17,8 +17,7 @@ const Users = db.define('users',{
         type: DataTypes.TEXT
     }
 },{
-    freezeTableName:true,
-    tableName: 'users'
+    freezeTableName:true
 });
 
 export default Users;
