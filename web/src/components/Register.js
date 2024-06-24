@@ -26,12 +26,10 @@ const Register = () => {
             setEmail('');
             setPassword('');
             setConfPassword('');
-            // Set success message and show "Back to Login" link
             setIsSuccess(true);
-            // Delay navigating to simulate user seeing success message
             setTimeout(() => {
                 navigate('/');
-            }, 2000); // Navigate back to login page after 2 seconds
+            }, 2000);
         } catch (error) {
             // Handle error response
             if (error.response) {
